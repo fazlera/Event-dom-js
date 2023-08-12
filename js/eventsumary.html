@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event summary</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <h3 id="click-for-new">Default Text</h3>
+    <button onclick="clickButton()">Click Me</button>
+    <button id="button2">Click Now</button>
+    <br>
+    <br>
+    <p id="paragraph">give me name</p>
+    
+    <input id="input-Field"  type="text">
+    
+
+    <button id="updateButton">Update</button>
+
+    <script>
+        function clickButton(){
+            document.body.style.backgroundColor ='blue'
+            const newItem = document.getElementById('click-for-new');
+            newItem.innerText = 'hey world are you allonge for me '
+        }
+
+        // option 2
+        document.getElementById('button2').addEventListener('click',function(){
+            document.body.style.backgroundColor = "orange"
+            const updateNewItem = document.getElementById('click-for-new');
+            updateNewItem.innerText = 'ami updated hoye gesi biya daw gaza khabo'
+        })
+
+        // option 2 again
+        document.getElementById('updateButton').addEventListener('click',function(){
+          const inputFiled = document.getElementById('input-Field');
+          const inputText = inputFiled.value;
+         
+
+          const setParagraph = document.getElementById('paragraph');
+          setParagraph.innerText = inputText;
+          inputFiled.value = '';
+
+        })
+    </script>
+</body>
+</html>
