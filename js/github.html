@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github hide</title>
+</head>
+<body>
+    <h1 id="secret">my secret info</h1>
+    <input id="del-confirm" type="text" placeholder="please type delete">
+    <button id="del-button" disabled>delete</button>
+
+    <script>
+        document.getElementById('del-confirm').addEventListener('keyup',function(event){
+            const text = event.target.value;
+
+            const buttonOpen = document.getElementById('del-button')
+            if(text === "delete"){
+                buttonOpen.removeAttribute('disabled')
+            }
+            else{
+                buttonOpen.setAttribute('disabled',true)
+            }
+            
+        })
+        
+
+
+        document.getElementById('del-button').addEventListener('click',function(){
+           const secretItem =  document.getElementById('secret')
+           secretItem.style.display = 'none'
+        })
+    </script>
+</body>
+</html>

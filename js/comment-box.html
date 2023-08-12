@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment Box practice</title>
+</head>
+<body>
+    <h1>comment box practice </h1>
+
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rem? Enim labore quidem laboriosam soluta, perferendis nesciunt aliquid, saepe quo dicta ratione optio delectus doloremque libero architecto? Quae non facilis maxime? Ullam a dolorem laboriosam assumenda laborum itaque recusandae minima quidem reiciendis! Rerum architecto quidem eius et qui sunt ipsam?</p>
+
+        <p>Reprehenderit voluptatem possimus, at ut, magni officia molestias itaque, aspernatur odio ipsum sit debitis quas placeat. Sapiente mollitia tempore, suscipit minus soluta veritatis quasi nisi totam necessitatibus iste fugiat voluptas! Eius saepe repellat ex delectus. Ratione ipsa aut dolorum, ab quo quos eaque dicta quaerat corrupti esse nostrum dolores vero!</p>
+
+        <p>Atque corrupti, hic vitae debitis rerum doloremque velit saepe cum laboriosam cupiditate magnam nesciunt consectetur illo rem earum fugiat ab voluptates illum aperiam esse eveniet porro? Molestias et distinctio odit tenetur obcaecati ratione aspernatur deleniti repellendus quae, cupiditate recusandae dignissimos dolorem labore vitae delectus porro sapiente consectetur dicta velit fugiat.</p>
+    </div>
+    <br>
+
+    <div>
+        <textarea name="" id="new-coomment" cols="60" rows="5"></textarea>
+        <br>
+        <button id="post-button">post now</button>
+    </div>
+
+    <script>
+        document.getElementById('post-button').addEventListener('click',function(){
+            const commentBox = document.getElementById('new-coomment')
+            const newComment = commentBox.value;
+            
+            const commentContainer = document.getElementById('comment-container');
+
+            const newPragraph = document.createElement('p');
+            newPragraph.innerText = newComment;
+            commentContainer.appendChild(newPragraph)
+
+            commentBox.value = '';
+
+        })
+    </script>
+</body>
+</html>
