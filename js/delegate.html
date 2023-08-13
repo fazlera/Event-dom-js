@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delegate-bubble</title>
+</head>
+<body>
+    Exploring event delegate
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li class="item">Voluptate, praesentium!</li>
+            <li class="item">Autem, nemo.</li>
+            <li class="item">Ratione, quisquam.</li>
+            <li class="item">Est, eos?</li>
+            <li class="item">Explicabo, ex.</li>
+        </ul>
+       <button id="add-new">Add-New</button>
+    </section>
+    <script>
+    //    const items = document.getElementsByClassName('item');
+    //    for(const item of items){
+    //     item.addEventListener('click',function(event){
+    //         event.target.parentNode.removeChild(event.target)
+    //     })
+        
+    //    }
+    document.getElementById('list-container').addEventListener('click',function(event){
+        event.target.parentNode.removeChild(event.target)
+
+    })
+
+       document.getElementById('add-new').addEventListener('click',function(){
+        const itemContainer = document.getElementById('list-container')
+
+        const li = document.createElement('li')
+        li.innerText= "Brand New Item";
+        li.classList.add('item')
+        itemContainer.appendChild(li)
+
+       })
+       
+    </script>
+</body>
+</html> 
